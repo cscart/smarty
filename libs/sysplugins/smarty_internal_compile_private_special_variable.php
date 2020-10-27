@@ -80,7 +80,7 @@ class Smarty_Internal_Compile_Private_Special_Variable extends Smarty_Internal_C
                     break;
                 }
 
-                return "@constant({$_index[1]})";
+                return "(defined({$_index[1]}) ? constant({$_index[1]}) : null)";
 
             case 'config':
                 if (isset($_index[2])) {
