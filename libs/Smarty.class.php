@@ -1504,7 +1504,7 @@ class Smarty extends Smarty_Internal_TemplateBase
      *
      * @return boolean
      */
-    public static function mutingErrorHandler($errno, $errstr, $errfile, $errline, $errcontext)
+    public static function mutingErrorHandler($errno, $errstr, $errfile, $errline, $errcontext = [])
     {
         $_is_muted_directory = false;
 
