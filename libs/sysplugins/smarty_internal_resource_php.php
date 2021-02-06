@@ -46,7 +46,7 @@ class Smarty_Internal_Resource_PHP extends Smarty_Resource_Uncompiled
 
             $source->uid = sha1($source->filepath);
             if ($source->smarty->compile_check) {
-                $source->timestamp = @filemtime($source->filepath);
+                $source->timestamp = filemtime($source->filepath);
                 $source->exists = !!$source->timestamp;
             }
         }
@@ -61,7 +61,7 @@ class Smarty_Internal_Resource_PHP extends Smarty_Resource_Uncompiled
      */
     public function populateTimestamp(Smarty_Template_Source $source)
     {
-        $source->timestamp = @filemtime($source->filepath);
+        $source->timestamp = filemtime($source->filepath);
         $source->exists = !!$source->timestamp;
     }
 

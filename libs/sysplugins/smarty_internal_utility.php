@@ -261,7 +261,7 @@ class Smarty_Internal_Utility
                             && substr_compare($_filepath, $_resource_part_2, - $_resource_part_2_length, $_resource_part_2_length) == 0))
                 ) {
                     if (isset($exp_time)) {
-                        if (time() - @filemtime($_filepath) >= $exp_time) {
+                        if (time() - filemtime($_filepath) >= $exp_time) {
                             $unlink = true;
                         }
                     } else {
