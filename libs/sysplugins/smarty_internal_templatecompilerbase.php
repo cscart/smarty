@@ -242,7 +242,7 @@ abstract class Smarty_Internal_TemplateCompilerBase
         $template_header = '';
         if (!$this->suppressHeader) {
             $template_header .= "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . strftime("%Y-%m-%d %H:%M:%S") . "\n";
-            $template_header .= "         compiled from \"" . $this->template->source->filepath . "\" */ ?>\n";
+            $template_header .= "         compiled from \"" . str_replace('*/','* /',$this->template->source->filepath) . "\" */ ?>\n";
         }
 
         if (empty($this->template->source->components)) {
