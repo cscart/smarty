@@ -42,7 +42,7 @@ class Smarty_Internal_Runtime_Capture
      *
      * @var string[]
      */
-    private $namedBuffer = array();
+    public $namedBuffer = array();
 
     /**
      * Flag if callbacks are registered
