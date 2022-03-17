@@ -92,7 +92,14 @@ class Smarty_Internal_Compile_Private_Print_Expression extends Smarty_Internal_C
                     );
                 }
                 // autoescape html
-                if ($compiler->template->smarty->escape_html) {
+                if (!empty($compiler->template->smarty->registered_filters[ Smarty::FILTER_VARIABLE_PRE ])) {
+                    foreach ($compiler->template->smarty->registered_filters[ Smarty::FILTER_VARIABLE_PRE ] as $key =>
+                             $function) {
+                        if (is_callable($function)) {
+                            $output = $function($output, $compiler);
+                        }
+                    }
+                } elseif ($compiler->template->smarty->escape_html) {
                     $output = "htmlspecialchars((string) {$output}, ENT_QUOTES, '" . addslashes(Smarty::$_CHARSET) . "')";
                 }
                 // loop over registered filters

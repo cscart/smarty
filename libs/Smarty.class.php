@@ -146,6 +146,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     const FILTER_POST     = 'post';
     const FILTER_PRE      = 'pre';
     const FILTER_OUTPUT   = 'output';
+    const FILTER_VARIABLE_PRE = 'variable_pre';
     const FILTER_VARIABLE = 'variable';
     /**
      * plugin types
